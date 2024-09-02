@@ -1,0 +1,7 @@
+<h2>Parent Component (Default Change Detection)</h2>
+<p>Primitive Data: {{ primitiveData }}</p>
+<p>Non-Primitive Data: {{ nonPrimitiveData.value }}</p>
+<button style="margin-right:20px" (click)="updatePrimitiveData()">Update Primitive</button>
+<button (click)="updateNonPrimitiveData()">Update Non-Primitive</button>
+
+<app-child [data]="nonPrimitiveData"></app-child>
