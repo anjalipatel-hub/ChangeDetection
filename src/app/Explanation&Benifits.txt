@@ -1,0 +1,16 @@
+Change Detection Strategies:
+    -> Default Strategy: Angular runs change detection for all components in the tree whenever any event occurs.
+    ->OnPush Strategy: Angular only runs change detection when the component’s input properties change (by reference).
+
+-> The parent component (AppComponent) uses the default change detection strategy, which means it will be checked for changes on every cycle.
+-> The child component (ChildComponent) uses the OnPush change detection strategy, which means it will only be checked for changes when its input properties change.
+-> When the parent component updates its primitive data, the child component will not be updated because the input properties have not changed.
+-> When the parent component updates its non-primitive data, the child component will be updated because the input properties have changed.
+->The updateNonPrimitiveData() method in the parent component updates the nonPrimitiveData object and then updates the data object, which is passed to the child component as an input property. This triggers the change detection in the child component.
+
+Hierarchical Dependency Injection:
+1> Component-specific services: Components can have their own instances of services, allowing for encapsulation and reusability.
+
+2> Service inheritance: Child components can inherit services from parent components, reducing the need for multiple instances of the same service.
+
+3> Flexibility: Hierarchical DI allows for a mix of component-specific and shared services, making it suitable for complex applications.
